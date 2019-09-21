@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: em(20) 0;
+    &__logo {
+        @include background('icon.svg');
+        position: absolute;
+        top: em(30);
+        right: em(30);
+        width: em(15);
+        height: em(15);
+        opacity: 0;
+        transition: .5s .1s ease;
+    }
+    &__title {
+        font-size: em(30);
+        color: $white;
+        @include FontSpecial;
+    }
+    .card-list {
+        &__item {
+            color: $white;
+            @include FontMedium;
+            margin-bottom: em(20);
+        }
+        &__link {
+            color: $white;
+            transition: .3s ease;
+            display: block;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}

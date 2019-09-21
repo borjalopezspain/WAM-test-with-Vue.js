@@ -1,0 +1,61 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: em(30) 0;
+    &__button {
+        .button-text {
+            color: $white;
+            @include FontMedium;
+            font-size: em(14);
+        }
+    }
+}
+
+//MODIFIERS
+
+.--buttonCTA {
+    border: none;
+    padding: em(15) em(40);
+    background: rgba(255,0,51,1);
+    position: relative;
+    overflow: hidden;
+    color: $white;
+    transition: all ease 0.7s;
+    border-radius: em(2);
+    cursor: pointer;
+    &:before,
+    &:after {
+        content: '';
+        width: em(50);
+        height: em(150);
+        display: block;
+        background: rgba(255,255,255,0.5);
+        transform: rotate(45deg);
+        top: em(-60);
+        position: absolute;
+        transition: none;
+        transition: .8s ease;
+    }
+    &:after {
+        right: -100%;
+    }
+    &:before {
+        left: -100%;
+    }
+    &:hover {
+        background: rgba(248,50,90,1);
+    }
+    &:before:hover,
+    &:after:hover {
+        transform: rotate(45deg), scaleX(130%);
+        background: rgba(255,255,255,0.1);
+    }
+    &:hover:after {
+        right: 150%;
+        
+    }
+    &:hover:before {
+        left: 150%;
+    }
+}

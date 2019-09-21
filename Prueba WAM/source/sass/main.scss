@@ -1,0 +1,80 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'card';
+@import 'cardholder';
+@import 'reset';
+@import 'buttons';
+@import 'grid';
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    @include FontNormal;
+    @include background('fondo.jpg', 0 0,repeat);
+}    
+
+#app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    margin-top: em(50);
+    max-width: em(1270);
+    &__header {
+        .headerTitle {
+            color: $white;
+            @include FontSpecial;
+        }
+        .headerSubtitle {
+            color: $white;
+            @include FontNormal;
+        }
+    }
+}
+
+//RESPONSIVE 
+
+@media #{$desktop-big} {
+    body {
+        transition: .8s ease;
+        &.background1 {
+            @include background('fondo1.jpg');
+        }
+        &.background2 {
+            @include background('fondo2.jpg');
+        }
+        &.background3 {
+            @include background('fondo3.jpg');
+        }
+        &.background4 {
+            @include background('fondo4.jpg');
+        }
+    }
+}
+@media #{$desktop-regular} {
+    .main-container {
+        &__header {
+            padding: 0 em(40);
+        }
+    }
+}
+
+@media #{$tablet} {
+    .main-container {
+        padding: 0 em(40);
+        &__header {
+            padding: 0;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .main-container {
+        padding: 0 em(20);
+    }
+}
